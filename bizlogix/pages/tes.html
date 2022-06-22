@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <style>
+        .arrow {
+            clip-path: polygon(0 0, 100% 0%, 55% 100%, 0% 100%);
+        }
+
+        .nest {
+            clip-path: polygon(65% 0, 100% 0%, 100% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body>
+
+
+<form action="action.php" method="post">
+    <label>name</label><br>
+    <input id="name" type="text"><br>
+    <label>email</label><br>
+    <input id="email" type="email"><br>
+    <label>subject</label><br>
+    <input id="subject" type="text"><br>
+    <label>message</label><br>
+    <textarea name="" id="message" cols="30" rows="10" placeholder="please leave a number and brief message. Thanks!"></textarea><br>
+    <button id="send"><a id="link" class="submit" onclick="sendMail()">Send mail</a></button>
+    <br>
+</form>
+<script>
+
+    function sendMail()
+    {
+        var body = document.getElementById("message").value;
+        var subject = document.getElementById("subject").value;
+        window.location.href = "mailto:mail@example.org?subject="+subject+"&body="+body;
+    }
+
+</script>
+</body>
+</html>
